@@ -7,10 +7,6 @@
 # In order for this theme to render correctly, you will need a
 # [Powerline-patched font](https://gist.github.com/1595572).
 #
-# In addition, I recommend the
-# [Solarized theme](https://github.com/altercation/solarized/) and, if you're
-# using it on Mac OS X, [iTerm 2](http://www.iterm2.com/) over Terminal.app -
-# it has significantly better color fidelity.
 #
 # # Goals
 #
@@ -112,12 +108,11 @@ prompt_status() {
 }
 
 prompt_time() {
-    prompt_segment %D{%T
+    echo -n "%F{blue}%D{%T}"  
 }
 
 prompt_begin() {
-
-   echo -n  $SEGMENT_SEPARATOR_BEGIN%K{white}
+   echo -n " $SEGMENT_SEPARATOR_BEGIN%K{white} "
 }
 
 
@@ -134,4 +129,4 @@ build_prompt() {
 
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
+PROMPT='%{%f%b%k%}$(build_prompt)'
